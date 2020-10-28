@@ -9,8 +9,10 @@ class App extends Component {
 
     constructor() {
         super();
-        this.handleIncrement = this.handleIncrement.bind(this)
+        this.handleIncrement = this.handleIncrement.bind(this);
+        this.handleDecrement = this.handleDecrement.bind(this);
     }
+
 
     style =
         this.state.count === 0
@@ -30,6 +32,10 @@ class App extends Component {
         this.setState({count: this.state.count + 1})
     }
 
+    handleDecrement() {
+        this.setState({count: this.state.count - 1})
+    }
+
 
     render() {
         return (
@@ -38,8 +44,8 @@ class App extends Component {
                     <span className={'count'} style={this.style}>
                         {this.countFunction()}
                     </span>
-                    <button onClick={this.handleIncrement}>+</button>
-                    <button>-</button>
+                    <button className="btn btn-primary" onClick={this.handleIncrement}>+</button>
+                    <button className="btn btn-primary" onClick={this.handleDecrement}>-</button>
                     <ul>
                         {this.state.tags.map((tag) => {
                             return (

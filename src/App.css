@@ -18,3 +18,17 @@ body {
 .text {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.btn {
+    margin: .2em;
+    padding: .25em 1.5em;
+    outline: none;
+    background-color: hsl(38, 91%, 95%);;
+    border: 1px solid black;
+    border-radius: .2em;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px hsl(38, 91%, 85%);
+}

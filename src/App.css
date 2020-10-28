@@ -14,3 +14,7 @@ body {
 .count {
     color: white;
 }
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+}

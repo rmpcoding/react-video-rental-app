@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-// import { Component } from 'react';
-// import ReactDOM from 'react-dom';
+import Movies from './Movies'
 
 class App extends Component {
     render() {
         return (
             <>
                 <main className="container">
+                    <Movies />
                     <h1>Hello, World!</h1>
                 </main>
             </>

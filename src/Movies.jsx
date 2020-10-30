@@ -4,17 +4,27 @@ import { getMovies } from './services/fakeMovieService';
 class Movies extends Component {
     state = {
         movies: getMovies(),
+        count: getMovies().length,
     };
 
-    deleteHandler = () => {
-        console.log('deleted')
-        
-    }
+    handleDelete = (movie) => {
+        const { count, movies } = this.state;
+        const id = movie._id;
+
+        const resultsList = movies.filter((mov) => {
+            return mov._id !== id;
+        });
+
+        return this.setState({
+            count: count - 1,
+            movies: resultsList,
+        });
+    };
 
     render() {
         return (
             <>
-                <p>Showing {} movies in the database</p>
+                <p>Showing {this.state.count} movies in the database</p>
                 <table className="table ">
                     <thead>
                         <tr>
@@ -22,25 +32,24 @@ class Movies extends Component {
                             <th scope="col">Genre</th>
                             <th scope="col">Stock</th>
                             <th scope="col">Rate</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.movies.map((movie) => {
                             return (
-                                <tr>
-                                    <td key={movie._id}>{movie.title}</td>
-                                    <td key={movie._id+1}>{movie.genre.name}</td>
-                                    <td key={movie._id+2}>
-                                        {movie.numberInStock}
-                                    </td>
-                                    <td key={movie._id+3}>
-                                        {movie.dailyRentalRate}
-                                    </td>
+                                <tr key={movie._id}>
+                                    <td>{movie.title}</td>
+                                    <td>{movie.genre.name}</td>
+                                    <td>{movie.numberInStock}</td>
+                                    <td>{movie.dailyRentalRate}</td>
                                     <td>
                                         <button
                                             type="button"
-                                            className="btn btn-danger"
-                                            onClick={this.deleteHandler}
+                                            className="btn btn-danger btn-sm"
+                                            onClick={() =>
+                                                this.handleDelete(movie)
+                                            }
                                         >
                                             Delete
                                         </button>

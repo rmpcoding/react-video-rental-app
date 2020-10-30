@@ -6,26 +6,46 @@ class Movies extends Component {
         movies: getMovies(),
     };
 
-    // handleGetMovies() {
-    //     return this.setState({
-    //         movies: getMovies()
-    //     })
-    // }
-
     render() {
         return (
             <>
-                <div>
-                    {this.state.movies.map((movie) => {
-                        console.log(movie);
-                        return <p key={movie._id}>{movie._id}</p>
-                    })}
-                </div>
-                <div>
-                    {this.state.movies.map((movie) => {
-                        console.log(movie);
-                        return <p key={movie._id}>{movie.title}</p>
-                    })}
+                <div className="row">
+                    <div className="column">
+                        {this.state.movies.map((movie) => {
+                            console.log(movie);
+                            return <p key={movie._id}>{movie._id}</p>;
+                        })}
+                    </div>
+                    <div className="column">
+                        {this.state.movies.map((movie) => {
+                            console.log(movie);
+                            return <p key={movie._id}>{movie.title}</p>;
+                        })}
+                    </div>
+                    <div className="column">
+                        {this.state.movies.map((movie) => {
+                            console.log(movie);
+                            return <p key={movie._id}>{movie.genre.name}</p>;
+                        })}
+                    </div>
+                    <div className="column">
+                        {this.state.movies.map((movie) => {
+                            console.log(movie);
+                            return <p key={movie._id}>{movie.numberInStock}</p>;
+                        })}
+                    </div>
+                    <div className="column">
+                        {this.state.movies.map((movie) => {
+                            console.log(movie);
+                            return <p key={movie._id}>{movie.dailyRentalRate}</p>;
+                        })}
+                    </div>
+                    <div className="column">
+                        {this.state.movies.map((movie) => {
+                            console.log(movie);
+                            return <p key={movie._id}>{movie.publishDate}</p>;
+                        })}
+                    </div>
                 </div>
             </>
         );

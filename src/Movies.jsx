@@ -6,47 +6,50 @@ class Movies extends Component {
         movies: getMovies(),
     };
 
+    deleteHandler = () => {
+        console.log('deleted')
+        
+    }
+
     render() {
         return (
             <>
-                <div className="row">
-                    <div className="column">
+                <p>Showing {} movies in the database</p>
+                <table className="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {this.state.movies.map((movie) => {
-                            console.log(movie);
-                            return <p key={movie._id}>{movie._id}</p>;
+                            return (
+                                <tr>
+                                    <td key={movie._id}>{movie.title}</td>
+                                    <td key={movie._id+1}>{movie.genre.name}</td>
+                                    <td key={movie._id+2}>
+                                        {movie.numberInStock}
+                                    </td>
+                                    <td key={movie._id+3}>
+                                        {movie.dailyRentalRate}
+                                    </td>
+                                    <td>
+                                        <button
+                                            type="button"
+                                            className="btn btn-danger"
+                                            onClick={this.deleteHandler}
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            );
                         })}
-                    </div>
-                    <div className="column">
-                        {this.state.movies.map((movie) => {
-                            console.log(movie);
-                            return <p key={movie._id}>{movie.title}</p>;
-                        })}
-                    </div>
-                    <div className="column">
-                        {this.state.movies.map((movie) => {
-                            console.log(movie);
-                            return <p key={movie._id}>{movie.genre.name}</p>;
-                        })}
-                    </div>
-                    <div className="column">
-                        {this.state.movies.map((movie) => {
-                            console.log(movie);
-                            return <p key={movie._id}>{movie.numberInStock}</p>;
-                        })}
-                    </div>
-                    <div className="column">
-                        {this.state.movies.map((movie) => {
-                            console.log(movie);
-                            return <p key={movie._id}>{movie.dailyRentalRate}</p>;
-                        })}
-                    </div>
-                    <div className="column">
-                        {this.state.movies.map((movie) => {
-                            console.log(movie);
-                            return <p key={movie._id}>{movie.publishDate}</p>;
-                        })}
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </>
         );
     }

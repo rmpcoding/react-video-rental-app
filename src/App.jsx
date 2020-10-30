@@ -7,7 +7,6 @@ class App extends Component {
             <>
                 <main className="container">
                     <Movies />
-                    <h1>Hello, World!</h1>
                 </main>
             </>
         );

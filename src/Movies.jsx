@@ -22,9 +22,10 @@ class Movies extends Component {
     };
 
     render() {
+        const { count } = this.state;
         const table = (
             <>
-                <p>Showing {this.state.count} movies in the database</p>
+                <p>Showing {count} movies in the database</p>
                 <table className="table">
                     <thead>
                         <tr>
@@ -63,7 +64,7 @@ class Movies extends Component {
         );
         return (
             <>
-                {this.state.count ? (
+                {count ? (
                     table
                 ) : (
                     <p>We have no movies to show you right now</p>

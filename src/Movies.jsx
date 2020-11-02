@@ -24,7 +24,7 @@ class Movies extends Component {
     render() {
         return (
             <>
-                <p>Showing {this.state.count} movies in the database</p>
+                <p>{this.state.count ? `Showing ${this.state.count} movies in the database` : "We have no movies to show you right now"}</p>
                 <table className="table ">
                     <thead>
                         <tr>

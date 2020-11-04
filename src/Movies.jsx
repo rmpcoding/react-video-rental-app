@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies } from './services/fakeMovieService';
+import Heart from './Heart';
 
 class Movies extends Component {
     state = {
@@ -44,6 +45,7 @@ class Movies extends Component {
                                     <td>{movie.genre.name}</td>
                                     <td>{movie.numberInStock}</td>
                                     <td>{movie.dailyRentalRate}</td>
+                                    <td>{<Heart />}</td>
                                     <td>
                                         <button
                                             type="button"
@@ -67,7 +69,9 @@ class Movies extends Component {
                 {count ? (
                     table
                 ) : (
-                    <p className="p-4">We have no movies to show you right now</p>
+                    <p className="p-4">
+                        We have no movies to show you right now
+                    </p>
                 )}
             </>
         );

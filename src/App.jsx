@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Movies from './Movies';
-import Heart from './Heart';
+import Heart from './components/common/Heart';
 
 class App extends Component {
     render() {

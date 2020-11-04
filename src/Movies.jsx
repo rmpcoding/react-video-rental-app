@@ -67,7 +67,7 @@ class Movies extends Component {
                 {count ? (
                     table
                 ) : (
-                    <p>We have no movies to show you right now</p>
+                    <p className="p-4">We have no movies to show you right now</p>
                 )}
             </>
         );

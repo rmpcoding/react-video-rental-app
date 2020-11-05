@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import Favorite from '@material-ui/icons/Favorite';
+import './styles.css'
 
 class Heart extends Component {
     state = {
@@ -18,7 +19,7 @@ class Heart extends Component {
     render() {
         return (
             <>
-                <span onClick={this.handleClick}>{this.state.favorite}</span>
+                <span className="favorite-icon" onClick={this.handleClick}>{this.state.favorite}</span>
             </>
         );
     }

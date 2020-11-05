@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies } from './services/fakeMovieService';
-import Heart from './components/common/Heart';
+import Heart from './components/common/Heart/Heart';
 
 class Movies extends Component {
     state = {

@@ -2,11 +2,29 @@ import React, { Component } from 'react';
 
 export class Pagination extends Component {
     render() {
-        return(
+        return (
             <>
-                <h1>Pagination Goes Here</h1>
+                <nav aria-label="Page navigation">
+                    <ul className="pagination">
+                        <li className="page-item">
+                            <a className="page-link" href="target_blank">
+                                1
+                            </a>
+                        </li>
+                        <li className="page-item">
+                            <a className="page-link" href="target_blank">
+                                2
+                            </a>
+                        </li>
+                        <li className="page-item">
+                            <a className="page-link" href="target_blank">
+                                3
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </>
-        )
+        );
     }
 }
 

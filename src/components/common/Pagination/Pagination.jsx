@@ -5,7 +5,7 @@ export class Pagination extends Component {
         return (
             <>
                 <nav aria-label="Page navigation">
-                    <ul className="pagination">
+                    <ul className="pagination justify-content-center">
                         <li className="page-item">
                             <a className="page-link" href="target_blank">
                                 1

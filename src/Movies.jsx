@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getMovies } from './services/fakeMovieService';
 import Heart from './components/common/Heart/Heart';
+import Pagination from './components/common/Pagination/Pagination';
 
 class Movies extends Component {
     state = {
@@ -34,8 +35,8 @@ class Movies extends Component {
                             <th scope="col">Genre</th>
                             <th scope="col">Stock</th>
                             <th scope="col">Rate</th>
-                            <th/>
-                            <th/>
+                            <th />
+                            <th />
                         </tr>
                     </thead>
                     <tbody>
@@ -63,6 +64,7 @@ class Movies extends Component {
                         })}
                     </tbody>
                 </table>
+                <Pagination />
             </>
         );
         return (

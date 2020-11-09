@@ -7,6 +7,7 @@ class Movies extends Component {
     state = {
         movies: getMovies(),
         count: getMovies().length,
+        pageSize: 4
     };
 
     handleDelete = (movie) => {
@@ -23,8 +24,12 @@ class Movies extends Component {
         });
     };
 
+    handlePageChange = (page) => {
+        console.log(page)
+    }
+
     render() {
-        const { count } = this.state;
+        const { count, pageSize } = this.state;
         const table = (
             <>
                 <p>Showing {count} movies in the database</p>
@@ -64,7 +69,7 @@ class Movies extends Component {
                         })}
                     </tbody>
                 </table>
-                <Pagination />
+                <Pagination itemCount={ count } pageSize={ pageSize} onPageChange={this.handlePageChange}/>
             </>
         );
         return (
